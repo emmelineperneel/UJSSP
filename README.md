@@ -21,10 +21,6 @@ This repository contains the code and data used for the computational experiment
 - `backward_exact_method/`  
   Implementation of the backward exact solution method for UJSSP.
 
-## 📦 Dependencies
-
-- [Gurobi Optimizer](https://www.gurobi.com/) (Academic license may be required)
-
 ## 🧾 License
 
 This project is licensed under the [MIT License](LICENSE).
