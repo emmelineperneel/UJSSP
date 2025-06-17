@@ -27,7 +27,9 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## 📚 Citation
 
-If you use this code in your research, please cite the corresponding publication (to be added).
+Please cite the code archive using the following DOI:  
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15684074.svg)](https://doi.org/10.5281/zenodo.15684074)
+When the corresponding paper is published, the citation will be added here.
 
 ## 🔗 Contact
 
