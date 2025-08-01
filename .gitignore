@@ -5,7 +5,7 @@ Output/
 Data/
 
 # Ignore everything in the Output folder for product partition
-PP/Output/
+Product_Partition/Output/
 
 # Ignore everything in the Data folder for product partition
-PP/Data/
+Product_Partition/Data/
