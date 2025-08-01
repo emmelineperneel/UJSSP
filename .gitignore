@@ -1,0 +1,11 @@
+# Ignore everything in the Output folder
+Output/
+
+# Ignore everything in the Data folder
+Data/
+
+# Ignore everything in the Output folder for product partition
+PP/Output/
+
+# Ignore everything in the Data folder for product partition
+PP/Data/
