@@ -2,7 +2,7 @@
 
 This repository contains all the code associated with **“The Unreliable Job Selection and Sequencing Problem”**.
 
-📄 **Paper**: See .. 
+📄 **Paper**: See ..  
 📦 **DOI**: [10.5281/zenodo.15684074](https://doi.org/10.5281/zenodo.15684074)  
 📜 **License**: [MIT License](./LICENSE)
 
@@ -13,19 +13,19 @@ This repository contains all the code associated with **“The Unreliable Job Se
 - `data_code/`  
   Scripts for generating, reading, and processing data used in the UJSSP experiments.
 
-- `MILP_Implementation_Gurobi/`  
+- `MILP_implementation_gurobi/`  
   C++ implementation of the MILP formulation using Gurobi.
 
-- `Forward_Stepwise_Exact_algorithm/`  
+- `Forward_stepwise_exact_method/`  
   Implementation of the forward stepwise exact algorithm for solving UJSSP instances.
 
-- `backward_stepwise_exact_algorithm/`  
+- `Backward_stepwise_exact_method/`  
   Implementation of the backward stepwise exact algorithm for solving UJSSP instances.
 
 - `Product_Partition/`  
   Code related to experiments based on reductions from the **Product Partition** problem:
   - `Data_code/`: Scripts to generate Product Partition instances.
-  - `Stepwise_algorithm/`: Stepwise exact algorithm applied to these instances.
+  - `Stepwise_method/`: Stepwise exact algorithm applied to these instances.
 
 ---
 
