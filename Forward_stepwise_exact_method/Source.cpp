@@ -1,4 +1,4 @@
-#include "Data.h"
+﻿#include "Data.h"
 #include<algorithm>
 #include<iostream>
 #include<fstream>
@@ -52,6 +52,7 @@ int main(int argc, char* argv[])
 
 
 	//Algorithm
+	int nr_sets = 1;
 	for (int j = 0; j < Data::n; j++)
 	{
 
@@ -61,6 +62,8 @@ int main(int argc, char* argv[])
 		std::vector<double> new_slope;
 		for (int s = 0; s < sets.size(); s++)
 		{
+			nr_sets++;
+
 #if SPEEDUPS
 			if (optimality_limit[s] < Data::p[j]*Data::r[j])
 			{
@@ -73,10 +76,18 @@ int main(int argc, char* argv[])
 			new_sets.push_back(new_set);
 			new_intercept.push_back(intercept[s] + slope[s] * Data::r[j] * Data::p[j] - Data::c[j]);
 			new_slope.push_back(slope[s] * Data::p[j]);
+			nr_sets++;
 		}
 
 		//Update upperbound
-		ub_R = ub_R / Data::p[j] - Data::r[j];
+		ub_R = 0;
+		prob = 1.0;
+		for (int i = j + 1; i < Data::n; i++)
+		{
+			prob *= Data::p[i];
+			ub_R += Data::r[i] * prob;
+		}
+		//ub_R = ub_R / Data::p[j] - Data::r[j];
 
 #if PRINT_INFO
 		std::cout << "\n\nSTEP " << j << std::endl;
@@ -267,6 +278,7 @@ int main(int argc, char* argv[])
 			std::cout << sets[s][i] << ",";
 		}
 		std::cout << sets[s][Data::n - 1] << "]\t with objective value: " << intercept[s] << std::endl;
+		std::cout << "Number of sets considered: " << nr_sets << " out of " << (std::pow(2, Data::n)) << std::endl;
 		std::cout << std::endl;
 	}
 
@@ -286,7 +298,7 @@ int main(int argc, char* argv[])
 	}
 
 	// Find last slash
-	size_t lastSlash = baseFilename.find_last_of("/");
+	size_t lastSlash = baseFilename.find_last_of("\\");
 
 	if (lastSlash != std::string::npos) {
 		// There is a directory in the path
@@ -294,7 +306,7 @@ int main(int argc, char* argv[])
 		std::string filenameOnly = baseFilename.substr(lastSlash + 1);
 
 		// Go one level up from folder and then into "output/"
-		outputFilename = folder + "/output/" + filenameOnly + ".out";
+		outputFilename = folder + "\\output\\" + filenameOnly + ".out";
 	}
 	else {
 		// No slashes, just replace .dat with .out
@@ -313,10 +325,9 @@ int main(int argc, char* argv[])
 	outFile << intercept[0] << std::endl;
 	outFile << std::chrono::duration_cast<std::chrono::duration<double>>(t2 - t1).count() << std::endl;
 	outFile << Data::n << std::endl;
+	outFile << nr_sets << std::endl;
 	for (int i = 0; i < Data::n; i++)
 	{
 		outFile << sets[0][i] << "\t" << Data::r[i] << "\t" << Data::c[i] << "\t" << Data::p[i] << std::endl;
 	}
-
-	return 0;
 }

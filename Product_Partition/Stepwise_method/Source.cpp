@@ -147,6 +147,7 @@ int main(int argc, char* argv[])
 	bool optimal_solution_found = false;
 	int optimal_new_set = 0; // Index of the optimal new set, if found
 	bool time_limit_reached = false;
+	int nr_sets = 0;
 	for (int j = 0; j < n; j++)
 	{
 
@@ -158,6 +159,7 @@ int main(int argc, char* argv[])
 		mpfr::mpreal loga = log(ma);
 		for (int s = 0; s < sets.size(); s++)
 		{
+			nr_sets++;
 			std::vector<bool> new_set = sets[s];
 			new_set[j] = true;
 			mpfr::mpreal product = exp(- (intercept[s] - loga));
@@ -179,7 +181,7 @@ int main(int argc, char* argv[])
 			new_sets.push_back(new_set);
 			new_intercept.push_back(intercept[s] - loga);
 			new_slope.push_back(slope[s] / ma);
-
+			nr_sets++;
 		}
 
 		//Update upperbound on remaining probability
@@ -537,6 +539,7 @@ int main(int argc, char* argv[])
 			std::cout << sets[s][i] << ",";
 		}
 		std::cout << sets[s][n - 1] << "]\t with objective value: " << product << std::endl;
+		std::cout << "Number of sets considered: " << nr_sets << " out of " << (std::pow(2, n)) << std::endl;
 		std::cout << "Root was equal to: " << root << std::endl;
 		if (yes_answer)
 			std::cout << "Yes, the root is equal to the product." << std::endl;
@@ -551,6 +554,7 @@ int main(int argc, char* argv[])
 	outFile << root << std::endl;
 	outFile << yes_answer << std::endl;
 	outFile << n << std::endl;
+	outFile << nr_sets << std::endl;
 	for (int i = 0; i < n; i++)
 	{
 		outFile << sets[0][i] << "\t" << a[i] << std::endl;
