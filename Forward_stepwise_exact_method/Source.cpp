@@ -4,6 +4,7 @@
 #include<fstream>
 #include<vector>
 #include<chrono>
+#include <cmath>
 
 #define PRINT_INFO false
 #define SPEEDUPS true

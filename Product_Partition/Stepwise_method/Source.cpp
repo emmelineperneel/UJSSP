@@ -9,6 +9,7 @@
 #include <algorithm>
 #include <numeric>
 #include<chrono>
+#include <cmath>
 
 #pragma warning(push)
 #pragma warning(disable: 4146)

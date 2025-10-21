@@ -1,11 +1,13 @@
-# Ignore everything in the Output folder
+# Ignore everything in the Output folders
 Output/
+Output_run_2/
 
 # Ignore everything in the Data folder
 Data/
 
-# Ignore everything in the Output folder for product partition
+# Ignore everything in the Output folders for product partition
 Product_Partition/Output/
+Product_Partition/Output_run_2/
 
 # Ignore everything in the Data folder for product partition
 Product_Partition/Data/
