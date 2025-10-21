@@ -16,6 +16,9 @@ This repository contains all the code associated with **“The Unreliable Job Se
 - `MILP_implementation_gurobi/`  
   C++ implementation of the MILP formulation using Gurobi.
 
+- `Dynamic_programming/`  
+  Implementation of the dynamic programming algorithm for solving UJSSP instances.
+
 - `Forward_stepwise_exact_method/`  
   Implementation of the forward stepwise exact algorithm for solving UJSSP instances.
 
