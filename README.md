@@ -3,7 +3,7 @@
 This repository contains all the code associated with **“The Unreliable Job Selection and Sequencing Problem”**.
 
 📄 **Paper**: See ..  
-📦 **Zenodo Archive (version-specific DOI)**: [10.5281/zenodo.15684073](https://doi.org/10.5281/zenodo.15684073)  
+📦 **Zenodo Archive**: [10.5281/zenodo.15684073](https://doi.org/10.5281/zenodo.15684073)  
 📂 **GitHub Repository**: [https://github.com/emmelineperneel/UJSSP](https://github.com/emmelineperneel/UJSSP)
 📜 **License**: [MIT License](./LICENSE)
 
