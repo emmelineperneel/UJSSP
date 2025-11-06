@@ -19,7 +19,7 @@ If you use this code, please cite:
   title = {Unreliable Job Selection and Sequencing Problem — Code and Data},
   year = {2025},
   publisher = {Zenodo},
-  doi = {10.5281/zenodo.15684075},
+  doi = {10.5281/zenodo.15684073},
   url = {https://github.com/emmelineperneel/UJSSP}
 }
 ```
